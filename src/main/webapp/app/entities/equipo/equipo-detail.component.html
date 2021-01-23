@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="equipo">
+            <h2><span jhiTranslate="equiposVentaApp.equipo.detail.title">Equipo</span> {{ equipo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="equiposVentaApp.equipo.activoFijo">Activo Fijo</span></dt>
+                <dd>
+                    <span>{{ equipo.activoFijo }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.marca">Marca</span></dt>
+                <dd>
+                    <span>{{ equipo.marca }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.procesador">Procesador</span></dt>
+                <dd>
+                    <span>{{ equipo.procesador }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.office">Office</span></dt>
+                <dd>
+                    <span>{{ equipo.office }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.sistemaOperativo">Sistema Operativo</span></dt>
+                <dd>
+                    <span>{{ equipo.sistemaOperativo }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.discoDuro">Disco Duro</span></dt>
+                <dd>
+                    <span>{{ equipo.discoDuro }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.ram">Ram</span></dt>
+                <dd>
+                    <span>{{ equipo.ram }}</span>
+                </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.observaciones">Observaciones</span></dt>
+                <dd>
+                    <span>{{ equipo.observaciones }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/equipo', equipo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
