@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "proquinal.com",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "EquiposVenta",
+    "packageName": "proquinal.com",
+    "packageFolder": "proquinal/com",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODljMjY1YmEyNGQ5NTFhMjc4NjdmY2JkMzBmYTRjYTNmOWFkNzhlMzc5OTA1MjM1NWY4ZDJiNGVkOGY3NjY0ZDMxZTc3YzMxZTM5YWRmMTc2ZDg2ZTdiZWE1ZTU2YTg5NTk1Y2NjOTk2ZTQ0NWZiZTRkZGFhYWFiMjUzZWJhZWI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "united",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1611363900704,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": ["es"],
+    "blueprints": []
+  }
+}

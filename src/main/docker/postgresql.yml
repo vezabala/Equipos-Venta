@@ -1,0 +1,11 @@
+version: '2'
+services:
+  equiposventa-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/EquiposVenta/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=EquiposVenta
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
