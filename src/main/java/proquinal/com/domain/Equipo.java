@@ -19,8 +19,8 @@ public class Equipo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceEquipo")
+    @SequenceGenerator(name="sequenceEquipo", sequenceName = "app_equipo_id_seq")
     private Long id;
 
     @NotNull
