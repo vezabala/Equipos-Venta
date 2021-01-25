@@ -2,6 +2,7 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { EquipoService } from 'app/entities/equipo/equipo.service';
 import { IEquipo, Equipo } from 'app/shared/model/equipo.model';
+import { Tipo } from 'app/shared/model/enumerations/tipo.model';
 
 describe('Service Tests', () => {
   describe('Equipo Service', () => {
@@ -31,7 +32,8 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'image/png',
-        'AAAAAAA'
+        'AAAAAAA',
+        Tipo.ESCRITORIO
       );
     });
 
@@ -74,7 +76,8 @@ describe('Service Tests', () => {
             discoDuro: 'BBBBBB',
             ram: 'BBBBBB',
             observaciones: 'BBBBBB',
-            imagen: 'BBBBBB'
+            imagen: 'BBBBBB',
+            tipo: 'BBBBBB'
           },
           elemDefault
         );
@@ -99,7 +102,8 @@ describe('Service Tests', () => {
             discoDuro: 'BBBBBB',
             ram: 'BBBBBB',
             observaciones: 'BBBBBB',
-            imagen: 'BBBBBB'
+            imagen: 'BBBBBB',
+            tipo: 'BBBBBB'
           },
           elemDefault
         );

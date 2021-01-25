@@ -28,7 +28,8 @@ export class EquipoUpdateComponent implements OnInit {
     ram: [null, [Validators.required, Validators.maxLength(70)]],
     observaciones: [null, [Validators.maxLength(200)]],
     imagen: [],
-    imagenContentType: []
+    imagenContentType: [],
+    tipo: []
   });
 
   constructor(
@@ -58,7 +59,8 @@ export class EquipoUpdateComponent implements OnInit {
       ram: equipo.ram,
       observaciones: equipo.observaciones,
       imagen: equipo.imagen,
-      imagenContentType: equipo.imagenContentType
+      imagenContentType: equipo.imagenContentType,
+      tipo: equipo.tipo
     });
   }
 
@@ -115,7 +117,8 @@ export class EquipoUpdateComponent implements OnInit {
       ram: this.editForm.get(['ram'])!.value,
       observaciones: this.editForm.get(['observaciones'])!.value,
       imagenContentType: this.editForm.get(['imagenContentType'])!.value,
-      imagen: this.editForm.get(['imagen'])!.value
+      imagen: this.editForm.get(['imagen'])!.value,
+      tipo: this.editForm.get(['tipo'])!.value
     };
   }
 

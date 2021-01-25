@@ -25,6 +25,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import proquinal.com.domain.enumeration.Tipo;
 /**
  * Integration tests for the {@link EquipoResource} REST controller.
  */
@@ -63,6 +64,9 @@ public class EquipoResourceIT {
     private static final String DEFAULT_IMAGEN_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_IMAGEN_CONTENT_TYPE = "image/png";
 
+    private static final Tipo DEFAULT_TIPO = Tipo.ESCRITORIO;
+    private static final Tipo UPDATED_TIPO = Tipo.PORTATIL;
+
     @Autowired
     private EquipoRepository equipoRepository;
 
@@ -97,7 +101,8 @@ public class EquipoResourceIT {
             .ram(DEFAULT_RAM)
             .observaciones(DEFAULT_OBSERVACIONES)
             .imagen(DEFAULT_IMAGEN)
-            .imagenContentType(DEFAULT_IMAGEN_CONTENT_TYPE);
+            .imagenContentType(DEFAULT_IMAGEN_CONTENT_TYPE)
+            .tipo(DEFAULT_TIPO);
         return equipo;
     }
     /**
@@ -117,7 +122,8 @@ public class EquipoResourceIT {
             .ram(UPDATED_RAM)
             .observaciones(UPDATED_OBSERVACIONES)
             .imagen(UPDATED_IMAGEN)
-            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE);
+            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE)
+            .tipo(UPDATED_TIPO);
         return equipo;
     }
 
@@ -152,6 +158,7 @@ public class EquipoResourceIT {
         assertThat(testEquipo.getObservaciones()).isEqualTo(DEFAULT_OBSERVACIONES);
         assertThat(testEquipo.getImagen()).isEqualTo(DEFAULT_IMAGEN);
         assertThat(testEquipo.getImagenContentType()).isEqualTo(DEFAULT_IMAGEN_CONTENT_TYPE);
+        assertThat(testEquipo.getTipo()).isEqualTo(DEFAULT_TIPO);
     }
 
     @Test
@@ -328,7 +335,8 @@ public class EquipoResourceIT {
             .andExpect(jsonPath("$.[*].ram").value(hasItem(DEFAULT_RAM)))
             .andExpect(jsonPath("$.[*].observaciones").value(hasItem(DEFAULT_OBSERVACIONES)))
             .andExpect(jsonPath("$.[*].imagenContentType").value(hasItem(DEFAULT_IMAGEN_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].imagen").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGEN))));
+            .andExpect(jsonPath("$.[*].imagen").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGEN))))
+            .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.toString())));
     }
     
     @Test
@@ -351,7 +359,8 @@ public class EquipoResourceIT {
             .andExpect(jsonPath("$.ram").value(DEFAULT_RAM))
             .andExpect(jsonPath("$.observaciones").value(DEFAULT_OBSERVACIONES))
             .andExpect(jsonPath("$.imagenContentType").value(DEFAULT_IMAGEN_CONTENT_TYPE))
-            .andExpect(jsonPath("$.imagen").value(Base64Utils.encodeToString(DEFAULT_IMAGEN)));
+            .andExpect(jsonPath("$.imagen").value(Base64Utils.encodeToString(DEFAULT_IMAGEN)))
+            .andExpect(jsonPath("$.tipo").value(DEFAULT_TIPO.toString()));
     }
 
     @Test
@@ -384,7 +393,8 @@ public class EquipoResourceIT {
             .ram(UPDATED_RAM)
             .observaciones(UPDATED_OBSERVACIONES)
             .imagen(UPDATED_IMAGEN)
-            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE);
+            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE)
+            .tipo(UPDATED_TIPO);
         EquipoDTO equipoDTO = equipoMapper.toDto(updatedEquipo);
 
         restEquipoMockMvc.perform(put("/api/equipos")
@@ -406,6 +416,7 @@ public class EquipoResourceIT {
         assertThat(testEquipo.getObservaciones()).isEqualTo(UPDATED_OBSERVACIONES);
         assertThat(testEquipo.getImagen()).isEqualTo(UPDATED_IMAGEN);
         assertThat(testEquipo.getImagenContentType()).isEqualTo(UPDATED_IMAGEN_CONTENT_TYPE);
+        assertThat(testEquipo.getTipo()).isEqualTo(UPDATED_TIPO);
     }
 
     @Test

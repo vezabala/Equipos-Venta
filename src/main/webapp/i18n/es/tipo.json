@@ -1,0 +1,9 @@
+{
+  "equiposVentaApp": {
+    "Tipo": {
+      "null": "",
+      "ESCRITORIO": "ESCRITORIO",
+      "PORTATIL": "PORTATIL"
+    }
+  }
+}

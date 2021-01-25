@@ -49,6 +49,10 @@
                         {{ equipo.imagenContentType }}, {{ byteSize(equipo.imagen) }}
                     </div>
                 </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.tipo">Tipo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'equiposVentaApp.Tipo.' + equipo.tipo }}">{{ equipo.tipo }}</span>
+                </dd>
             </dl>
 
             <button type="submit"

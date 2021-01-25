@@ -152,6 +152,14 @@
                     <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
                            formControlName="imagenContentType" />
                 </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equiposVentaApp.equipo.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" name="tipo" formControlName="tipo" id="field_tipo">
+                        <option value="ESCRITORIO">{{ 'equiposVentaApp.Tipo.ESCRITORIO' | translate }}</option>
+                        <option value="PORTATIL">{{ 'equiposVentaApp.Tipo.PORTATIL' | translate }}</option>
+                    </select>
+                </div>
             </div>
 
             <div>

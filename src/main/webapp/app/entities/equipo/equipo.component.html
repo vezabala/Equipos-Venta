@@ -32,6 +32,7 @@
                     <th scope="col"  jhiSortBy="ram"><span jhiTranslate="equiposVentaApp.equipo.ram">Ram</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="observaciones"><span jhiTranslate="equiposVentaApp.equipo.observaciones">Observaciones</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="imagen"><span jhiTranslate="equiposVentaApp.equipo.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipo"><span jhiTranslate="equiposVentaApp.equipo.tipo">Tipo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -52,6 +53,7 @@
                         </a>
                         <span *ngIf="equipo.imagen">{{ equipo.imagenContentType }}, {{ byteSize(equipo.imagen) }}</span>
                     </td>
+                    <td jhiTranslate="{{ 'equiposVentaApp.Tipo.' + equipo.tipo }}">{{ equipo.tipo }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

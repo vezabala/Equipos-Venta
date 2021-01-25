@@ -1,11 +1,11 @@
-id;activo_fijo;marca;procesador;office;sistema_operativo;disco_duro;ram;observaciones;imagen;imagen_content_type
-1;optical lime concept;secondary SMS;open-source;Locks Licensed Principal;navigating Lek redundant;Stravenue;salmon Producer Principal;Wooden Small Cotton Chicken;../fake-data/blob/hipster.png;image/png
-2;Cotton Pants Toys;Regional transmit;Metrics Gorgeous Ways;Fresh Harbor;capacitor payment Lebanese Pound;Tuna;systemic silver B2C;Iraq SAS;../fake-data/blob/hipster.png;image/png
-3;Borders withdrawal;Croatian Kuna web-readiness;protocol;cohesive;Guinea Cotton copying;Credit Card Account;Cotton Soap;cutting-edge;../fake-data/blob/hipster.png;image/png
-4;mint green deposit;multi-byte secondary Guyana Dollar;Ball input;Customizable;deposit Car;Assimilated driver initiative;Rand back-end;Point;../fake-data/blob/hipster.png;image/png
-5;Handmade Granite Ball;Tuna;deposit global transmit;networks compressing Facilitator;Future-proofed real-time Streets;Bermuda Tasty;Decentralized Usability;Outdoors JBOD;../fake-data/blob/hipster.png;image/png
-6;strategize;Bond Markets Units European Composite Unit (EURCO);program iterate Shoes;Belize Dollar;hacking generating Shore;Money Market Account;Cheese;Home Loan Account Pizza Customer;../fake-data/blob/hipster.png;image/png
-7;Personal Loan Account Facilitator Concrete;Clothing ROI;Oman Dynamic;override Tunisian Dinar;uniform;systems Steel;Senior;Guinea Franc;../fake-data/blob/hipster.png;image/png
-8;methodologies;superstructure;pink Grocery;parse transmitting programming;SDD;Corporate;PCI extranet Gorgeous Metal Table;architectures composite Garden;../fake-data/blob/hipster.png;image/png
-9;purple Chile Accountability;primary Unbranded Auto Loan Account;Toys sensor;Sri Lanka Rupee Incredible Granite Chair Cyprus;Handmade Cotton Gloves RAM Oregon;revolutionary connect systems;Pound Sterling Licensed Awesome;Soft back-end Soft;../fake-data/blob/hipster.png;image/png
-10;cross-platform synthesizing;encompassing Buckinghamshire leverage;Group USB Cotton;Plastic B2C;transmitting Florida;Towels US Dollar;Future-proofed incentivize parse;index;../fake-data/blob/hipster.png;image/png
+id;activo_fijo;marca;procesador;office;sistema_operativo;disco_duro;ram;observaciones;imagen;imagen_content_type;tipo
+1;optical lime concept;secondary SMS;open-source;Locks Licensed Principal;navigating Lek redundant;Stravenue;salmon Producer Principal;Wooden Small Cotton Chicken;../fake-data/blob/hipster.png;image/png;ESCRITORIO
+2;drive parsing Metrics;high-level;British Indian Ocean Territory (Chagos Archipelago) RSS open system;Dynamic Saudi Riyal Forges;invoice;CSS;B2C mesh applications;Berkshire New York facilitate;../fake-data/blob/hipster.png;image/png;ESCRITORIO
+3;ivory;leading-edge networks;Generic Home Loan Account;orchestrate;Pants AI;orchid;application;secondary Guyana Dollar;../fake-data/blob/hipster.png;image/png;ESCRITORIO
+4;Cotton;mint green Refined Concrete Chair;Garden Borders Rand;Steel Point Ergonomic Metal Towels;Keyboard;Technician Fantastic;transmit;networks compressing Facilitator;../fake-data/blob/hipster.png;image/png;PORTATIL
+5;Ergonomic Analyst;Sausages;utilize Human Specialist;ROI Bond Markets Units European Composite Unit (EURCO);program iterate Shoes;Belize Dollar;hacking generating Shore;Money Market Account;../fake-data/blob/hipster.png;image/png;PORTATIL
+6;Savings Account programming;Investor Strategist;Concrete Alaska Comoro Franc;Macedonia;Dynamic Pennsylvania magenta;Gloves Regional systems;Rustic;Incredible Guinea Franc Grocery;../fake-data/blob/hipster.png;image/png;ESCRITORIO
+7;input Creative;programming system-worthy Incredible;Salad PCI extranet;national;indexing Falkland Islands (Malvinas);Garden;purple Chile Accountability;primary Unbranded Auto Loan Account;../fake-data/blob/hipster.png;image/png;PORTATIL
+8;Center interface Sleek Concrete Chips;array;RAM;capacitor revolutionary;Lake payment Pound Sterling;primary;Corporate transmit;Soft;../fake-data/blob/hipster.png;image/png;PORTATIL
+9;dot-com;leverage Chief exploit;Cotton innovative even-keeled;Summit;Florida strategic Ohio;Egyptian Pound 24/365 Reduced;Reduced infomediaries backing up;Handcrafted Plastic Shirt synthesize;../fake-data/blob/hipster.png;image/png;PORTATIL
+10;Soap;Practical Administrator;sensor Adaptive;Sports attitude-oriented Table;Uganda;revolutionary;Hat Mouse;Sausages;../fake-data/blob/hipster.png;image/png;PORTATIL

@@ -77,6 +77,11 @@
             "fieldName": "imagen",
             "fieldType": "byte[]",
             "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "Tipo",
+            "fieldValues": "ESCRITORIO,PORTATIL"
         }
     ],
     "relationships": [

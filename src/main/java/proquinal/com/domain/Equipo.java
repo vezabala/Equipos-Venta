@@ -9,6 +9,8 @@ import java.util.Objects;
 import java.util.HashSet;
 import java.util.Set;
 
+import proquinal.com.domain.enumeration.Tipo;
+
 /**
  * A Equipo.
  */
@@ -68,6 +70,10 @@ public class Equipo implements Serializable {
 
     @Column(name = "imagen_content_type")
     private String imagenContentType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo")
+    private Tipo tipo;
 
     @OneToMany(mappedBy = "equipo")
     private Set<Usuario> usuarios = new HashSet<>();
@@ -211,6 +217,19 @@ public class Equipo implements Serializable {
         this.imagenContentType = imagenContentType;
     }
 
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public Equipo tipo(Tipo tipo) {
+        this.tipo = tipo;
+        return this;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
     public Set<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -267,6 +286,7 @@ public class Equipo implements Serializable {
             ", observaciones='" + getObservaciones() + "'" +
             ", imagen='" + getImagen() + "'" +
             ", imagenContentType='" + getImagenContentType() + "'" +
+            ", tipo='" + getTipo() + "'" +
             "}";
     }
 }

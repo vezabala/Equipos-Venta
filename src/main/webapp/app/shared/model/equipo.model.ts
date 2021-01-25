@@ -1,4 +1,5 @@
 import { IUsuario } from 'app/shared/model/usuario.model';
+import { Tipo } from 'app/shared/model/enumerations/tipo.model';
 
 export interface IEquipo {
   id?: number;
@@ -12,6 +13,7 @@ export interface IEquipo {
   observaciones?: string;
   imagenContentType?: string;
   imagen?: any;
+  tipo?: Tipo;
   usuarios?: IUsuario[];
 }
 
@@ -28,6 +30,7 @@ export class Equipo implements IEquipo {
     public observaciones?: string,
     public imagenContentType?: string,
     public imagen?: any,
+    public tipo?: Tipo,
     public usuarios?: IUsuario[]
   ) {}
 }

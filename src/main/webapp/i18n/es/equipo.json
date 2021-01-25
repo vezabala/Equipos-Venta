@@ -25,6 +25,7 @@
       "ram": "Ram",
       "observaciones": "Observaciones",
       "imagen": "Imagen",
+      "tipo": "Tipo",
       "usuarios": "Usuarios"
     }
   }
