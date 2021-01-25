@@ -40,6 +40,15 @@
                 <dd>
                     <span>{{ equipo.observaciones }}</span>
                 </dd>
+                <dt><span jhiTranslate="equiposVentaApp.equipo.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="equipo.imagen">
+                        <a (click)="openFile(equipo?.imagenContentType!, equipo?.imagen)">
+                            <img [src]="'data:' + equipo.imagenContentType + ';base64,' + equipo.imagen" style="max-width: 100%;" alt="equipo image"/>
+                        </a>
+                        {{ equipo.imagenContentType }}, {{ byteSize(equipo.imagen) }}
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

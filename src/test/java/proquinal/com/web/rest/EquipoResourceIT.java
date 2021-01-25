@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 import javax.persistence.EntityManager;
 import java.util.List;
 
@@ -57,6 +58,11 @@ public class EquipoResourceIT {
     private static final String DEFAULT_OBSERVACIONES = "AAAAAAAAAA";
     private static final String UPDATED_OBSERVACIONES = "BBBBBBBBBB";
 
+    private static final byte[] DEFAULT_IMAGEN = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_IMAGEN = TestUtil.createByteArray(1, "1");
+    private static final String DEFAULT_IMAGEN_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_IMAGEN_CONTENT_TYPE = "image/png";
+
     @Autowired
     private EquipoRepository equipoRepository;
 
@@ -89,7 +95,9 @@ public class EquipoResourceIT {
             .sistemaOperativo(DEFAULT_SISTEMA_OPERATIVO)
             .discoDuro(DEFAULT_DISCO_DURO)
             .ram(DEFAULT_RAM)
-            .observaciones(DEFAULT_OBSERVACIONES);
+            .observaciones(DEFAULT_OBSERVACIONES)
+            .imagen(DEFAULT_IMAGEN)
+            .imagenContentType(DEFAULT_IMAGEN_CONTENT_TYPE);
         return equipo;
     }
     /**
@@ -107,7 +115,9 @@ public class EquipoResourceIT {
             .sistemaOperativo(UPDATED_SISTEMA_OPERATIVO)
             .discoDuro(UPDATED_DISCO_DURO)
             .ram(UPDATED_RAM)
-            .observaciones(UPDATED_OBSERVACIONES);
+            .observaciones(UPDATED_OBSERVACIONES)
+            .imagen(UPDATED_IMAGEN)
+            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE);
         return equipo;
     }
 
@@ -140,6 +150,8 @@ public class EquipoResourceIT {
         assertThat(testEquipo.getDiscoDuro()).isEqualTo(DEFAULT_DISCO_DURO);
         assertThat(testEquipo.getRam()).isEqualTo(DEFAULT_RAM);
         assertThat(testEquipo.getObservaciones()).isEqualTo(DEFAULT_OBSERVACIONES);
+        assertThat(testEquipo.getImagen()).isEqualTo(DEFAULT_IMAGEN);
+        assertThat(testEquipo.getImagenContentType()).isEqualTo(DEFAULT_IMAGEN_CONTENT_TYPE);
     }
 
     @Test
@@ -314,7 +326,9 @@ public class EquipoResourceIT {
             .andExpect(jsonPath("$.[*].sistemaOperativo").value(hasItem(DEFAULT_SISTEMA_OPERATIVO)))
             .andExpect(jsonPath("$.[*].discoDuro").value(hasItem(DEFAULT_DISCO_DURO)))
             .andExpect(jsonPath("$.[*].ram").value(hasItem(DEFAULT_RAM)))
-            .andExpect(jsonPath("$.[*].observaciones").value(hasItem(DEFAULT_OBSERVACIONES)));
+            .andExpect(jsonPath("$.[*].observaciones").value(hasItem(DEFAULT_OBSERVACIONES)))
+            .andExpect(jsonPath("$.[*].imagenContentType").value(hasItem(DEFAULT_IMAGEN_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].imagen").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGEN))));
     }
     
     @Test
@@ -335,7 +349,9 @@ public class EquipoResourceIT {
             .andExpect(jsonPath("$.sistemaOperativo").value(DEFAULT_SISTEMA_OPERATIVO))
             .andExpect(jsonPath("$.discoDuro").value(DEFAULT_DISCO_DURO))
             .andExpect(jsonPath("$.ram").value(DEFAULT_RAM))
-            .andExpect(jsonPath("$.observaciones").value(DEFAULT_OBSERVACIONES));
+            .andExpect(jsonPath("$.observaciones").value(DEFAULT_OBSERVACIONES))
+            .andExpect(jsonPath("$.imagenContentType").value(DEFAULT_IMAGEN_CONTENT_TYPE))
+            .andExpect(jsonPath("$.imagen").value(Base64Utils.encodeToString(DEFAULT_IMAGEN)));
     }
 
     @Test
@@ -366,7 +382,9 @@ public class EquipoResourceIT {
             .sistemaOperativo(UPDATED_SISTEMA_OPERATIVO)
             .discoDuro(UPDATED_DISCO_DURO)
             .ram(UPDATED_RAM)
-            .observaciones(UPDATED_OBSERVACIONES);
+            .observaciones(UPDATED_OBSERVACIONES)
+            .imagen(UPDATED_IMAGEN)
+            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE);
         EquipoDTO equipoDTO = equipoMapper.toDto(updatedEquipo);
 
         restEquipoMockMvc.perform(put("/api/equipos")
@@ -386,6 +404,8 @@ public class EquipoResourceIT {
         assertThat(testEquipo.getDiscoDuro()).isEqualTo(UPDATED_DISCO_DURO);
         assertThat(testEquipo.getRam()).isEqualTo(UPDATED_RAM);
         assertThat(testEquipo.getObservaciones()).isEqualTo(UPDATED_OBSERVACIONES);
+        assertThat(testEquipo.getImagen()).isEqualTo(UPDATED_IMAGEN);
+        assertThat(testEquipo.getImagenContentType()).isEqualTo(UPDATED_IMAGEN_CONTENT_TYPE);
     }
 
     @Test

@@ -134,6 +134,24 @@
                         </small>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equiposVentaApp.equipo.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('imagenContentType')!.value + ';base64,' + editForm.get('imagen')!.value" style="max-height: 100px;" *ngIf="editForm.get('imagen')!.value" alt="equipo image"/>
+                        <div *ngIf="editForm.get('imagen')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('imagenContentType')!.value }}, {{ byteSize(editForm.get('imagen')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'file_imagen')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                           formControlName="imagen"/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                           formControlName="imagenContentType" />
+                </div>
             </div>
 
             <div>

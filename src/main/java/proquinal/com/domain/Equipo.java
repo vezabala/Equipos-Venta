@@ -62,6 +62,13 @@ public class Equipo implements Serializable {
     @Column(name = "observaciones", length = 200)
     private String observaciones;
 
+    @Lob
+    @Column(name = "imagen")
+    private byte[] imagen;
+
+    @Column(name = "imagen_content_type")
+    private String imagenContentType;
+
     @OneToMany(mappedBy = "equipo")
     private Set<Usuario> usuarios = new HashSet<>();
 
@@ -178,6 +185,32 @@ public class Equipo implements Serializable {
         this.observaciones = observaciones;
     }
 
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public Equipo imagen(byte[] imagen) {
+        this.imagen = imagen;
+        return this;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getImagenContentType() {
+        return imagenContentType;
+    }
+
+    public Equipo imagenContentType(String imagenContentType) {
+        this.imagenContentType = imagenContentType;
+        return this;
+    }
+
+    public void setImagenContentType(String imagenContentType) {
+        this.imagenContentType = imagenContentType;
+    }
+
     public Set<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -232,6 +265,8 @@ public class Equipo implements Serializable {
             ", discoDuro='" + getDiscoDuro() + "'" +
             ", ram='" + getRam() + "'" +
             ", observaciones='" + getObservaciones() + "'" +
+            ", imagen='" + getImagen() + "'" +
+            ", imagenContentType='" + getImagenContentType() + "'" +
             "}";
     }
 }

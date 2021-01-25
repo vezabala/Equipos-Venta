@@ -1,11 +1,11 @@
-id;activo_fijo;marca;procesador;office;sistema_operativo;disco_duro;ram;observaciones
-1;optical lime concept;secondary SMS;open-source;Locks Licensed Principal;navigating Lek redundant;Stravenue;salmon Producer Principal;Wooden Small Cotton Chicken
-2;Cotton Pants Toys;Regional transmit;Metrics Gorgeous Ways;Fresh Harbor;capacitor payment Lebanese Pound;Tuna;systemic silver B2C;Iraq SAS
-3;Borders withdrawal;Croatian Kuna web-readiness;protocol;cohesive;Guinea Cotton copying;Credit Card Account;Cotton Soap;cutting-edge
-4;mint green deposit;multi-byte secondary Guyana Dollar;Ball input;Customizable;deposit Car;Assimilated driver initiative;Rand back-end;Point
-5;Handmade Granite Ball;Tuna;deposit global transmit;networks compressing Facilitator;Future-proofed real-time Streets;Bermuda Tasty;Decentralized Usability;Outdoors JBOD
-6;strategize;Bond Markets Units European Composite Unit (EURCO);program iterate Shoes;Belize Dollar;hacking generating Shore;Money Market Account;Cheese;Home Loan Account Pizza Customer
-7;Personal Loan Account Facilitator Concrete;Clothing ROI;Oman Dynamic;override Tunisian Dinar;uniform;systems Steel;Senior;Guinea Franc
-8;methodologies;superstructure;pink Grocery;parse transmitting programming;SDD;Corporate;PCI extranet Gorgeous Metal Table;architectures composite Garden
-9;purple Chile Accountability;primary Unbranded Auto Loan Account;Toys sensor;Sri Lanka Rupee Incredible Granite Chair Cyprus;Handmade Cotton Gloves RAM Oregon;revolutionary connect systems;Pound Sterling Licensed Awesome;Soft back-end Soft
-10;cross-platform synthesizing;encompassing Buckinghamshire leverage;Group USB Cotton;Plastic B2C;transmitting Florida;Towels US Dollar;Future-proofed incentivize parse;index
+id;activo_fijo;marca;procesador;office;sistema_operativo;disco_duro;ram;observaciones;imagen;imagen_content_type
+1;optical lime concept;secondary SMS;open-source;Locks Licensed Principal;navigating Lek redundant;Stravenue;salmon Producer Principal;Wooden Small Cotton Chicken;../fake-data/blob/hipster.png;image/png
+2;Cotton Pants Toys;Regional transmit;Metrics Gorgeous Ways;Fresh Harbor;capacitor payment Lebanese Pound;Tuna;systemic silver B2C;Iraq SAS;../fake-data/blob/hipster.png;image/png
+3;Borders withdrawal;Croatian Kuna web-readiness;protocol;cohesive;Guinea Cotton copying;Credit Card Account;Cotton Soap;cutting-edge;../fake-data/blob/hipster.png;image/png
+4;mint green deposit;multi-byte secondary Guyana Dollar;Ball input;Customizable;deposit Car;Assimilated driver initiative;Rand back-end;Point;../fake-data/blob/hipster.png;image/png
+5;Handmade Granite Ball;Tuna;deposit global transmit;networks compressing Facilitator;Future-proofed real-time Streets;Bermuda Tasty;Decentralized Usability;Outdoors JBOD;../fake-data/blob/hipster.png;image/png
+6;strategize;Bond Markets Units European Composite Unit (EURCO);program iterate Shoes;Belize Dollar;hacking generating Shore;Money Market Account;Cheese;Home Loan Account Pizza Customer;../fake-data/blob/hipster.png;image/png
+7;Personal Loan Account Facilitator Concrete;Clothing ROI;Oman Dynamic;override Tunisian Dinar;uniform;systems Steel;Senior;Guinea Franc;../fake-data/blob/hipster.png;image/png
+8;methodologies;superstructure;pink Grocery;parse transmitting programming;SDD;Corporate;PCI extranet Gorgeous Metal Table;architectures composite Garden;../fake-data/blob/hipster.png;image/png
+9;purple Chile Accountability;primary Unbranded Auto Loan Account;Toys sensor;Sri Lanka Rupee Incredible Granite Chair Cyprus;Handmade Cotton Gloves RAM Oregon;revolutionary connect systems;Pound Sterling Licensed Awesome;Soft back-end Soft;../fake-data/blob/hipster.png;image/png
+10;cross-platform synthesizing;encompassing Buckinghamshire leverage;Group USB Cotton;Plastic B2C;transmitting Florida;Towels US Dollar;Future-proofed incentivize parse;index;../fake-data/blob/hipster.png;image/png

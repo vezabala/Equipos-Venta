@@ -10,6 +10,8 @@ export interface IEquipo {
   discoDuro?: string;
   ram?: string;
   observaciones?: string;
+  imagenContentType?: string;
+  imagen?: any;
   usuarios?: IUsuario[];
 }
 
@@ -24,6 +26,8 @@ export class Equipo implements IEquipo {
     public discoDuro?: string,
     public ram?: string,
     public observaciones?: string,
+    public imagenContentType?: string,
+    public imagen?: any,
     public usuarios?: IUsuario[]
   ) {}
 }

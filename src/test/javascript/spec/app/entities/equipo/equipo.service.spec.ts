@@ -20,7 +20,19 @@ describe('Service Tests', () => {
       service = injector.get(EquipoService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Equipo(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Equipo(
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'image/png',
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
@@ -61,7 +73,8 @@ describe('Service Tests', () => {
             sistemaOperativo: 'BBBBBB',
             discoDuro: 'BBBBBB',
             ram: 'BBBBBB',
-            observaciones: 'BBBBBB'
+            observaciones: 'BBBBBB',
+            imagen: 'BBBBBB'
           },
           elemDefault
         );
@@ -85,7 +98,8 @@ describe('Service Tests', () => {
             sistemaOperativo: 'BBBBBB',
             discoDuro: 'BBBBBB',
             ram: 'BBBBBB',
-            observaciones: 'BBBBBB'
+            observaciones: 'BBBBBB',
+            imagen: 'BBBBBB'
           },
           elemDefault
         );

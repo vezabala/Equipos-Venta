@@ -72,6 +72,11 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "200"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
         }
     ],
     "relationships": [
@@ -92,5 +97,7 @@
     "readOnly": false,
     "embedded": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
 }

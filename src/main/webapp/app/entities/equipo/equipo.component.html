@@ -31,6 +31,7 @@
                     <th scope="col"  jhiSortBy="discoDuro"><span jhiTranslate="equiposVentaApp.equipo.discoDuro">Disco Duro</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="ram"><span jhiTranslate="equiposVentaApp.equipo.ram">Ram</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="observaciones"><span jhiTranslate="equiposVentaApp.equipo.observaciones">Observaciones</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imagen"><span jhiTranslate="equiposVentaApp.equipo.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -45,6 +46,12 @@
                     <td>{{ equipo.discoDuro }}</td>
                     <td>{{ equipo.ram }}</td>
                     <td>{{ equipo.observaciones }}</td>
+                    <td>
+                        <a *ngIf="equipo.imagen" (click)="openFile(equipo.imagenContentType, equipo.imagen)">
+                            <img [src]="'data:' + equipo.imagenContentType + ';base64,' + equipo.imagen" style="max-height: 30px;" alt="equipo image"/>
+                        </a>
+                        <span *ngIf="equipo.imagen">{{ equipo.imagenContentType }}, {{ byteSize(equipo.imagen) }}</span>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

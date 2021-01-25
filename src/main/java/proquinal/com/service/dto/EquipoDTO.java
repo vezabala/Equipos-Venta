@@ -3,6 +3,7 @@ package proquinal.com.service.dto;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Lob;
 
 /**
  * A DTO for the {@link proquinal.com.domain.Equipo} entity.
@@ -42,6 +43,10 @@ public class EquipoDTO implements Serializable {
     @Size(max = 200)
     private String observaciones;
 
+    @Lob
+    private byte[] imagen;
+
+    private String imagenContentType;
     
     public Long getId() {
         return id;
@@ -115,6 +120,22 @@ public class EquipoDTO implements Serializable {
         this.observaciones = observaciones;
     }
 
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getImagenContentType() {
+        return imagenContentType;
+    }
+
+    public void setImagenContentType(String imagenContentType) {
+        this.imagenContentType = imagenContentType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -148,6 +169,7 @@ public class EquipoDTO implements Serializable {
             ", discoDuro='" + getDiscoDuro() + "'" +
             ", ram='" + getRam() + "'" +
             ", observaciones='" + getObservaciones() + "'" +
+            ", imagen='" + getImagen() + "'" +
             "}";
     }
 }
