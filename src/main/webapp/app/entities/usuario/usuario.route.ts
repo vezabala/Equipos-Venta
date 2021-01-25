@@ -68,7 +68,7 @@ export const usuarioRoute: Routes = [
       usuario: UsuarioResolve
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [],
       pageTitle: 'equiposVentaApp.usuario.home.title'
     },
     canActivate: [UserRouteAccessService]
