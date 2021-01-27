@@ -1,6 +1,13 @@
 package proquinal.com.web.rest;
 
+import io.github.jhipster.service.filter.StringFilter;
+import org.apache.commons.lang3.StringUtils;
+import proquinal.com.criteria.EquipoCriteria;
+import proquinal.com.domain.Equipo;
+import proquinal.com.domain.enumeration.Tipo;
 import proquinal.com.service.EquipoService;
+import proquinal.com.service.EquipoServiceQuery;
+import proquinal.com.service.dto.BusquedaDTO;
 import proquinal.com.web.rest.errors.BadRequestAlertException;
 import proquinal.com.service.dto.EquipoDTO;
 
@@ -40,8 +47,11 @@ public class EquipoResource {
 
     private final EquipoService equipoService;
 
-    public EquipoResource(EquipoService equipoService) {
+    private final EquipoServiceQuery equipoServiceQuery;
+
+    public EquipoResource(EquipoService equipoService, EquipoServiceQuery equipoServiceQuery) {
         this.equipoService = equipoService;
+        this.equipoServiceQuery = equipoServiceQuery;
     }
 
     /**
@@ -104,6 +114,37 @@ public class EquipoResource {
         Page<EquipoDTO> page = equipoService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    @PostMapping("/equipos/list")
+    public ResponseEntity<List<Equipo>> List(@RequestBody BusquedaDTO busquedaDTO){
+        EquipoCriteria equipoCriteria = createCriteria(busquedaDTO);
+        List<Equipo> list = equipoServiceQuery.findByCriterial(equipoCriteria);
+        return new ResponseEntity<List<Equipo>>(list, HttpStatus.OK);
+    }
+
+    private EquipoCriteria createCriteria(BusquedaDTO dtoE){
+        EquipoCriteria equipoCriteria = new EquipoCriteria();
+        if(dtoE!=null){
+            if(!StringUtils.isBlank(dtoE.getActivoFijo())){
+                StringFilter filter = new StringFilter();
+                filter.setEquals(dtoE.getActivoFijo());
+                equipoCriteria.setActivoFijo(filter);
+            }
+            if(!StringUtils.isBlank(dtoE.getTipo())){
+                EquipoCriteria.TipoFilter filter = new EquipoCriteria.TipoFilter();
+                String tipo = dtoE.getTipo().toUpperCase();
+                filter.setEquals(Tipo.valueOf(tipo));
+                equipoCriteria.setTipo(filter);
+            }
+        }
+        return equipoCriteria;
+    }
+
+    @GetMapping("/equipos/list")
+    public ResponseEntity<List<Equipo>> list(){
+        List<Equipo> list = equipoServiceQuery.findAll();
+        return new ResponseEntity<List<Equipo>>(list, HttpStatus.OK);
     }
 
     /**
