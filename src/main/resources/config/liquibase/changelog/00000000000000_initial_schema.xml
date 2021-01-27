@@ -8,8 +8,8 @@
 
         <changeSet id="00000000000000" author="jhipster">
         <createSequence sequenceName="sequence_generator" startValue="60" incrementBy="1"/>
-            <createSequence sequenceName="app_equipo_id_seq" startValue="60" incrementBy="1"/>
-            <createSequence sequenceName="app_usuario_id_seq" startValue="60" incrementBy="1"/>
+            <createSequence sequenceName="app_equipo_id_seq" startValue="50" incrementBy="1"/>
+            <createSequence sequenceName="app_usuario_id_seq" startValue="50" incrementBy="1"/>
     </changeSet>
 
     <!--
