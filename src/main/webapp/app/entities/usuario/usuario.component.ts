@@ -82,7 +82,7 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   listaUsuarios(): void {
     this.usuarioService.usuarios(this.busqueda).subscribe(
       data => {
-        this.usuarios = data;
+        this.usuariosList = data;
       },
       () => this.onError()
     );
