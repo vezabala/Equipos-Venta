@@ -7,7 +7,7 @@ import proquinal.com.criteria.UsuarioCriteria;
 import proquinal.com.domain.Usuario;
 import proquinal.com.service.UsuarioService;
 import proquinal.com.service.UsuarioServiceQuery;
-import proquinal.com.service.dto.BusquedaDTO;
+import proquinal.com.service.dto.BusquedaUsuarioDTO;
 import proquinal.com.web.rest.errors.BadRequestAlertException;
 import proquinal.com.service.dto.UsuarioDTO;
 
@@ -115,13 +115,13 @@ public class UsuarioResource {
     }
 
     @PostMapping("/usuarios/list")
-    public ResponseEntity<List<Usuario>> List(@RequestBody BusquedaDTO busquedaDTO){
-        UsuarioCriteria usuarioCriteria = createCriteria(busquedaDTO);
+    public ResponseEntity<List<Usuario>> List(@RequestBody BusquedaUsuarioDTO busquedaUsuarioDTO){
+        UsuarioCriteria usuarioCriteria = createCriteria(busquedaUsuarioDTO);
         List<Usuario> list = usuarioServiceQuery.findByCriterial(usuarioCriteria);
         return new ResponseEntity<List<Usuario>>(list, HttpStatus.OK);
     }
 
-    private UsuarioCriteria createCriteria(BusquedaDTO dto){
+    private UsuarioCriteria createCriteria(BusquedaUsuarioDTO dto){
         UsuarioCriteria usuarioCriteria = new UsuarioCriteria();
         if(dto!=null){
             if(!StringUtils.isBlank(dto.getNumeroDocumento())){
