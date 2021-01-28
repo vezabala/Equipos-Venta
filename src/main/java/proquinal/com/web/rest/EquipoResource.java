@@ -7,7 +7,8 @@ import proquinal.com.domain.Equipo;
 import proquinal.com.domain.enumeration.Tipo;
 import proquinal.com.service.EquipoService;
 import proquinal.com.service.EquipoServiceQuery;
-import proquinal.com.service.dto.BusquedaDTO;
+import proquinal.com.service.dto.BusquedaEquipoDTO;
+import proquinal.com.service.dto.BusquedaUsuarioDTO;
 import proquinal.com.web.rest.errors.BadRequestAlertException;
 import proquinal.com.service.dto.EquipoDTO;
 
@@ -117,13 +118,13 @@ public class EquipoResource {
     }
 
     @PostMapping("/equipos/list")
-    public ResponseEntity<List<Equipo>> List(@RequestBody BusquedaDTO busquedaDTO){
-        EquipoCriteria equipoCriteria = createCriteria(busquedaDTO);
+    public ResponseEntity<List<Equipo>> List(@RequestBody BusquedaEquipoDTO busquedaEquipoDTO){
+        EquipoCriteria equipoCriteria = createCriteria(busquedaEquipoDTO);
         List<Equipo> list = equipoServiceQuery.findByCriterial(equipoCriteria);
         return new ResponseEntity<List<Equipo>>(list, HttpStatus.OK);
     }
 
-    private EquipoCriteria createCriteria(BusquedaDTO dtoE){
+    private EquipoCriteria createCriteria(BusquedaEquipoDTO dtoE){
         EquipoCriteria equipoCriteria = new EquipoCriteria();
         if(dtoE!=null){
             if(!StringUtils.isBlank(dtoE.getActivoFijo())){
